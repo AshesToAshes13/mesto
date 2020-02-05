@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+</head>
+<body>
+  <div class="root">
+    <header class="header root__section">
+      <img src="<%=require('./images/logo.svg').default%>" alt="mesto logo" class="logo">
+    </header>
+    <div class="profile root__section">
+      <div class="user-info">
+        <div class="user-info__photo"></div>
+        <div class="user-info__data">
+          <h1 class="user-info__name"></h1>
+          <p class="user-info__job"></p>
+          <button class="button user-info__user_button">Edit</button>
+        </div>
+        <button class="button user-info__button">+</button>
+      </div>
+    </div>
+    <div class="places-list root__section">
+
+    </div>
+    <div class="popup">
+      <div class="popup__content" >
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close">
+        <h3 class="popup__title">Новое место</h3>
+        <form class="popup__form" name="card">
+            <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Название">
+            <p class="popup__allert popup__allert-name__error" style="display: none"></p>
+            <input type="text" name="link" class="popup__input popup__input_type_link-url" placeholder="Ссылка на картинку">
+            <p class="popup__allert popup__allert-link__error" style="display: none"></p>
+            <button type class="button popup__button" disabled name="btn">+</button>
+        </form>
+  </div>
+  </div>
+  <div class="popup__user">
+    <div class="popup__content">
+      <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup__user_close">
+      <h3 class="popup__title">Редактровать профиль</h3>
+      <form class="popup__form" name="user">
+          <input type="text" name="nickname" class="popup__input popup__input_type_name" placeholder="Имя">
+          <p class="popup__allert popup__allert-nickname__error" style="display: none"></p>
+          <input type="text" name="about" class="popup__input popup__input_type_link-url" placeholder="О себе">
+          <p class="popup__allert popup__allert-about__error" style="display: none"></p>
+          <button type class="button popup__button save_button" name="btn">Сохранить</button>
+      </form>
+</div>
+</div>
+<div class="popup__avatar">
+  <div class="popup__content">
+    <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup__avatar_close">
+    <h3 class="popup__title">Обновить аватар</h3>
+    <form class="popup__form" name="avatar">
+        <input type="text" name="link" class="popup__avatar_input popup__input__type-link" placeholder="Ссылка на аватар">
+        <p class="popup__allert popup__allert-link__error" style="display: none" id="linkError"></p>
+        <button type class="button popup__button save_button" name="btn">Сохранить</button>
+    </form>
+</div>
+</div>
+<div class="popup__image">
+  <div class="popup__content1">
+    <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup__image_close">
+    <img src="" alt="" class="image">
+</div>
+</div>
+  <script type="module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+</html>
